@@ -20,3 +20,44 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+#cache file
+*Cache
+#mod_launcher file
+*mod_launcher
+#.dll file
+*.dll
+#.zip file
+*.zip
+#.exe file
+*.exe
+#.json file
+*.json
+#.dat file
+*.dat
+#version.txt file
+version.txt
+#version_login.txt file
+version_login.txt
+#.log file
+*.log
+
+
+chuanqi/MirServer/DBServer
+chuanqi/MirServer/Log
+chuanqi/MirServer/LoginSrv
+chuanqi/MirServer/RunGate
+chuanqi/MirServer/RunGateH5
+chuanqi/MirServer/996M2引擎帮助文档.chm
+chuanqi/MirServer/GCConfig.ini
+chuanqi/策划目录
+chuanqi1/MirServer/DBServer
+chuanqi1/MirServer/Log
+chuanqi1/MirServer/LoginGate
+chuanqi1/MirServer/LoginSrv
+chuanqi1/MirServer/RunGate
+chuanqi1/MirServer/RunGateH5
+chuanqi1/MirServer/996M2引擎帮助文档.chm
+chuanqi1/MirServer/GCConfig.ini
+chuanqi1/MirServer/Mir200/Log
+chuanqi/MirServer/Mir200/Envir/3rd/log
+chuanqi/MirServer/Mir200/Log
