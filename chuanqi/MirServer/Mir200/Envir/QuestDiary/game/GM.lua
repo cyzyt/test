@@ -1,0 +1,229 @@
+-- if ConstCfg.DEBUG then
+--     --给予绑定物品
+--     function usercmd1(actor, param1, param2)
+--     end
+
+--     --金币
+--     function usercmd10001(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.gold, "=", 0, "", true)
+--     end
+--     function usercmd10002(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.gold, "+", 100000000, "", true)
+--     end
+    
+--     --元宝
+--     function usercmd10003(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.yb, "=", 0, "", true)
+--     end
+--     function usercmd10004(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.yb, "+", 100000000, "", true)
+--     end
+    
+--     --灵符
+--     function usercmd10005(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.lf, "=", 0, "", true)
+--     end
+--     function usercmd10006(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.lf, "+", 100000000, "", true)
+--     end
+    
+--     --绑定元宝
+--     function usercmd10007(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.bdyb, "=", 0, "", true)
+--     end
+--     function usercmd10008(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         changemoney(actor, ConstCfg.money.bdyb, "+", 100000000, "", true)
+--     end
+
+--     --异域大战
+--     function usercmd10009(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         Playyydz.custom_open(actor)
+--     end
+--     function usercmd10010(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         Playyydz.custom_close(actor)
+--     end
+
+--     --大乱斗
+--     function usercmd10011(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         Playdld.custom_open(actor)
+--     end
+--     function usercmd10012(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         Playdld.custom_close(actor)
+--     end
+
+--     --任务完成
+--     function usercmd10100(actor, tasktype)
+--         if getgmlevel(actor) ~= 10 then return end
+--         local tasktype = tonumber(tasktype)
+--         if not tasktype then return end
+--         Task.rwwc(actor, tasktype)
+--     end
+--     --任务完成2
+--     function usercmd10101(actor, taskid)
+--         if getgmlevel(actor) ~= 10 then return end
+--         taskid = tonumber(taskid)
+--         if not taskid then return end
+--         Task.finish(actor, taskid)
+--     end
+--     --任务领取
+--     function usercmd10102(actor, taskid)
+--         if getgmlevel(actor) ~= 10 then return end
+--         taskid = tonumber(taskid)
+--         if not taskid then return end
+--         Task.receive(actor, taskid)
+--     end
+--     --任务删除
+--     function usercmd10103(actor, taskid)
+--         if getgmlevel(actor) ~= 10 then return end
+--         taskid = tonumber(taskid)
+--         if not taskid then return end
+--         Task.delete(actor, taskid)
+--     end
+
+--     function usercmd10013(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         local zslevel = getbaseinfo(actor, ConstCfg.gbase.renew_level)
+--         local next_zslevel = zslevel + 1
+--         setbaseinfo(actor, ConstCfg.gbase.renew_level, next_zslevel)  --转生常量
+--         GameEvent.push(EventCfg.goZSLevelChange, actor, next_zslevel, zslevel)
+--     end
+
+--     function usercmd10014(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         local zslevel = getbaseinfo(actor, ConstCfg.gbase.renew_level)
+--         local next_zslevel = 0
+--         setbaseinfo(actor, ConstCfg.gbase.renew_level, next_zslevel)  --转生常量
+--         GameEvent.push(EventCfg.goZSLevelChange, actor, next_zslevel, zslevel)
+--     end
+
+--     --全屏清怪
+--     function usercmd10015(actor)
+--         if getgmlevel(actor) ~= 10 then return end
+--         local _mapID = getbaseinfo(actor, ConstCfg.gbase.mapid)
+--         local x,y = getbaseinfo(actor, ConstCfg.gbase.x),getbaseinfo(actor, ConstCfg.gbase.y)
+--         local object = getobjectinmap(_mapID,x,y,10,2)
+--         if #object > 0 then
+--             for i, mon in ipairs(object) do
+--                 killmonbyobj(actor,mon,true,true,true)
+--             end
+--         end
+--     end
+
+    
+--     --添加道具
+--     function usercmd10016(actor, itemName,itemNum)
+--         if getgmlevel(actor) ~= 10 then return end
+--         local Name = tonumber(itemName)
+--         if type(Name) == "number" then
+--             itemName = getstditeminfo(Name,1)
+--         end
+--         itemNum = tonumber(itemNum) or 1
+--         giveitem(actor,itemName,itemNum)
+--     end
+
+--     --江湖名望等级+1
+--     function usercmd10017(actor)
+--         JiangHuMingWang.GmLevelAdd(actor)
+--     end
+--     --江湖名望等级清空
+--     function usercmd10018(actor)
+--         JiangHuMingWang.GmLevelClear(actor)
+--     end
+--     --江湖名望任务
+--     function usercmd10019(actor)
+--         JiangHuMingWang.GmRw(actor)
+--     end
+
+--      --触发进入下一天
+--      function usercmd10104(actor)
+--         local t = getplayerlst()
+--         for _,actor in ipairs(t) do
+--             local beforedawndatas = {}
+--             GameEvent.push(EventCfg.goBeforedawn, actor, beforedawndatas)
+--             Message.sendmsg(actor, ssrNetMsgCfg.sync, nil, nil, nil, beforedawndatas)
+--         end
+--         local openday = grobalinfo(ConstCfg.global.openday)
+--         GameEvent.push(EventCfg.roBeforedawn, openday)
+--     end
+--     --让所有行会参与今晚攻城
+--     function usercmd10105(actor)
+--         addattacksabakall()
+--         release_print("gm执行成功")
+--     end
+--     --清空物品
+--     function usercmd10106(actor)
+--         local tab_name = {}
+--         local tab_num = {}
+--         local item_num = getbaseinfo(actor, ConstCfg.gbase.bag_num)   --获取背包物品数量
+--         for i=0,item_num-1 do
+--             local itemobj = getiteminfobyindex(actor, i)    --该接口为异步在获取时物品消失则获取不完整
+--             local idx = getiteminfo(actor, itemobj, 2)  --获取背包物品idx
+--             local name = getstditeminfo(idx,1)          --获取背包物品name
+--             local item_mun = getiteminfo(actor, itemobj, ConstCfg.iteminfo.overlap)  --获取堆叠
+--             if item_mun == 0 then   --堆叠为0 为不堆叠 数量为1
+--                 item_mun = 1
+--             end
+--             table.insert(tab_name,name)
+--             table.insert(tab_num,item_mun)
+--         end
+--         for j=1,#tab_name do
+--             takeitem(actor,tab_name[j],tab_num[j])
+--         end
+--     end
+--     --查询背包内物品
+--     function usercmd10107(actor)
+--         local tab_name = {}
+--         local tab_num = {}
+--         local tab_id = {}
+--         local tab_item = {}
+        
+--         local item_num = getbaseinfo(actor, ConstCfg.gbase.bag_num)   --获取背包物品数量
+--         for i=0,item_num-1 do
+--             local itemobj = getiteminfobyindex(actor, i)    --该接口为异步在获取时物品消失则获取不完整
+--             local idx = getiteminfo(actor, itemobj, 2)  --获取背包物品idx
+--             local id = getiteminfo(actor, itemobj, 1)  --获取背包物品id
+--             local name = getstditeminfo(idx,1)          --获取背包物品name
+--             local item_mun = getiteminfo(actor, itemobj, ConstCfg.iteminfo.overlap)  --获取堆叠
+--             if item_mun == 0 then   --堆叠为0 为不堆叠 数量为1
+--                 item_mun = 1
+--             end
+--             table.insert(tab_name,name)
+--             table.insert(tab_num,item_mun)
+--             table.insert(tab_id,id)
+--             table.insert(tab_item,itemobj)
+--         end
+--         for j=1,#tab_name do
+--             LOGPrint("\n"..tab_name[j].."num=:"..tab_num[j].."id=:"..tab_id[j].."item=:"..tab_item[j])
+--         end
+--     end
+--     --查询玩家自定义变量 @get 变量名
+--     function usercmd10108(actor,var)
+--         local value = getplayvar(actor,var)
+--         LOGPrint(type(value)..":"..var.." = "..value)
+--     end
+--     --设置玩家自定义变量 @set 变量名 变量值
+--     function usercmd10109(actor,var,value)
+--         setplayvar(actor, "HUMAN",var,value,1)
+--     end
+--     --查询全局自定义变量 @get 变量名
+--     function usercmd10110(actor,var)
+--         local value = getsysvarex(var)
+--         LOGPrint(type(value)..":"..var.." = "..value)
+--     end
+--     --设置全局定义变量 @set 变量名 变量值
+--     function usercmd10111(actor,var,value)
+--         setsysvarex(var,value, 1)
+--     end
+-- end
