@@ -1,0 +1,86 @@
+jian_yb 10001
+jia_yb 10002
+
+jian_czybi 10003
+jia_czybi 10004
+
+jian_jt 10005
+jia_jt 10006
+
+jian_ybi 10007
+jia_ybi 10008
+
+openhd1 10009
+closehd1 10010
+
+openhd2 10011
+closehd2 10012
+
+open_rxld 10013
+close_rxld 10014
+
+open_fmpk 10015
+close_fmpk 10016
+
+open_jqpd 10017
+close_jqpd 10018
+
+open_dbqb 10019
+close_dbqb 10020
+
+open_hhsl 10021
+close_hhsl 10022
+
+open_tzjh 10023
+
+rwwc 10100
+
+;--//系统
+gm_getsysvar 1
+gm_setsysvar 2
+gm_inisysvarex 3
+gm_getsysvarex 4
+gm_setsysvarex 5
+gm_sendluamsg 6
+
+;--//玩家
+gm_getplayvar 1001
+gm_setplayvar 1002
+gm_getplayvarex 1003
+gm_setplayvarex 1004
+gm_jumptoplay 1005
+gm_bringplay 1006
+gm_giveitem 1007
+gm_finditem 1008
+gm_checktitle 1009
+gm_addtitle 1010
+gm_deltitle 1011
+gm_checkbuff 1012
+gm_addbuff 1013
+gm_addbuffex 1014
+gm_delbuff 1015
+
+;--//地图
+gm_mapmove 2001
+gm_killmon1 2002
+gm_killmon2 2003
+gm_selectmon 2004
+gm_selectplay 2005
+gm_moveplayers 2006
+
+;--//道具
+gm_clearbag 3001
+
+; --//NPC
+gm_createnpc 4001
+
+;--//怪物
+gm_genmon 5001
+
+;--//行会
+gm_addguild 6001
+gm_delguild 6002
+gm_setguildlv 6003
+
+;--//沙巴克
+gm_castleinfo 7001
