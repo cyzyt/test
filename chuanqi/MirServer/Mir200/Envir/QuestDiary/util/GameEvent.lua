@@ -2,13 +2,26 @@ GameEvent = {}
 
 local _listeners = {}
 
+-- 事件添加
+---*  eventName : 事件的名称，用于标识不同的事件
+---*  func : 要添加的事件处理函数，当事件触发时将调用该函数。
+---*  tag : 监听器的标签，用于唯一标识一个监听器，确保不会添加重复的监听器
+---*  priority : 监听器的优先级，可选参数，决定了监听器在列表中的位置，优先级越高的监听器会越先被调用。
+---@param eventName string
+---@param func function
+---@param tag string
+---@param priority number
 function GameEvent.add(eventName, func, tag, priority)
 	assert(tag, "Tag must not be nil")
-	
+	assert(type(func) == "function", "Func must be a function")
+	if priority ~= nil then
+	  	assert(type(priority) == "number", "Priority must be a number")
+	end
+
 	if not _listeners[eventName] then
 		_listeners[eventName] = {}
 	end
-	
+
 	local eventListeners = _listeners[eventName]
 	local eventListenerSize = #eventListeners
 	for i = 1, eventListenerSize do
